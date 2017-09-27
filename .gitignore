@@ -1,0 +1,6 @@
+#ignore packages installed by npm 
+node_modules
+.Ds_Store
+.idea
+#put any othor files you don't want to check in here,
+#such as .DS_Store(OSX) , *.bak,etc.
