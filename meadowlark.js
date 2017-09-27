@@ -1,6 +1,6 @@
 var express = require('express');
 var handlebars = require('express3-handlebars').create({defaultLayout:'main'})
-
+var fortune = require('./lib/fortune')
 var app = express();
 
 app.use(express.static(__dirname + '/public'))
@@ -9,9 +9,6 @@ app.set('view engine','handlebars')
 
 app.set('port',process.env.PORT || 3000);
 
-var fortunes = [
-    'IS is using d25t','IS-3 is using BL-9','IS-8 is using 440','IS-7 is using S70'
-]
 
 
 app.get('/',function (req,res) {
@@ -19,8 +16,7 @@ app.get('/',function (req,res) {
 })
 
 app.get('/about',function (req,res) {
-    var randomFortune = fortunes[Math.floor(Math.random()*fortunes.length)]
-    res.render('about',{fortune:randomFortune})
+    res.render('about',{fortune:fortune.getFortune()})
 })
 
 //404
