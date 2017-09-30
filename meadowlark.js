@@ -18,8 +18,19 @@ app.get('/',function (req,res) {
     res.render('home')
 })
 
+app.get('/tours/hood-river',function (req,res) {
+    res.render('tours/hood-river')
+})
+
+app.get('/tours/request-group-rate',function (req,res) {
+    res.render('tours/request-group-rate')
+})
+
 app.get('/about',function (req,res) {
-    res.render('about',{fortune:fortune.getFortune()})
+    res.render('about',{
+        fortune:fortune.getFortune(),
+        pageTestScript:'/qa/tests-about.js'
+    })
 })
 
 //404
