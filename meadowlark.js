@@ -15,9 +15,9 @@ app.use(function (req,res,next) {
 })
 
 app.get('/',function (req,res) {
-    console.log(123)
-    res.set(123)
-    // res.render('home')
+    // console.log(123)
+    // res.set(123)
+    res.render('home')
 })
 
 app.get('/tours/hood-river',function (req,res) {
